@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RemindView" customModule="Note" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbx-H6-ZLI" customClass="RemindView" customModule="Note" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5l-fl-anf">
+                            <rect key="frame" x="10" y="7" width="31" height="30"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" red="0.18823529411764706" green="0.035294117647058823" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="nZv-di-gVI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7i-N5-ccG">
+                            <rect key="frame" x="334" y="7" width="31" height="30"/>
+                            <state key="normal" title="设置">
+                                <color key="titleColor" red="0.18823529410000001" green="0.035294117649999998" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="finishAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="nck-tQ-kva"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.36862745098039218" green="0.69019607843137254" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Kau-xH-qOi"/>
+                        <constraint firstAttribute="trailing" secondItem="w7i-N5-ccG" secondAttribute="trailing" constant="10" id="cZS-lW-z5s"/>
+                        <constraint firstItem="w7i-N5-ccG" firstAttribute="centerY" secondItem="jbx-H6-ZLI" secondAttribute="centerY" id="dez-L9-ktU"/>
+                        <constraint firstItem="C5l-fl-anf" firstAttribute="leading" secondItem="jbx-H6-ZLI" secondAttribute="leading" constant="10" id="hFd-0B-ABf"/>
+                        <constraint firstItem="C5l-fl-anf" firstAttribute="centerY" secondItem="jbx-H6-ZLI" secondAttribute="centerY" id="r3y-0g-b74"/>
+                    </constraints>
+                </view>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="m4c-bG-y5o">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <date key="date" timeIntervalSinceReferenceDate="501577820.66471201">
+                        <!--2016-11-23 07:10:20 +0000-->
+                    </date>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jbx-H6-ZLI" secondAttribute="trailing" id="1Bk-w4-EHd"/>
+                <constraint firstAttribute="bottom" secondItem="m4c-bG-y5o" secondAttribute="bottom" id="F4r-D6-3Qz"/>
+                <constraint firstItem="m4c-bG-y5o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KbK-CS-IiP"/>
+                <constraint firstItem="jbx-H6-ZLI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PBz-o3-Uic"/>
+                <constraint firstItem="m4c-bG-y5o" firstAttribute="top" secondItem="jbx-H6-ZLI" secondAttribute="bottom" id="RxI-Cw-xHn"/>
+                <constraint firstAttribute="trailing" secondItem="m4c-bG-y5o" secondAttribute="trailing" id="TUb-vC-4cW"/>
+                <constraint firstItem="jbx-H6-ZLI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wih-2x-VNz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="cancelBtn" destination="C5l-fl-anf" id="Iba-y7-qcB"/>
+                <outlet property="datePicker" destination="m4c-bG-y5o" id="1Ji-96-tXc"/>
+                <outlet property="finishBtn" destination="w7i-N5-ccG" id="TLv-7A-F9h"/>
+            </connections>
+            <point key="canvasLocation" x="-30" y="-323"/>
+        </view>
+    </objects>
+</document>

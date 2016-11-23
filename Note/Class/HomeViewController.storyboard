@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="egq-qz-Tpm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="slp-YZ-ge7">
+            <objects>
+                <navigationController id="egq-qz-Tpm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jlp-z4-7hJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ofj-rS-IO8" kind="relationship" relationship="rootViewController" id="P38-mP-PIe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwM-75-TyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1254" y="-7"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="tqu-4S-g9j">
+            <objects>
+                <viewController id="Ofj-rS-IO8" customClass="HomeViewController" customModule="Note" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ADa-RN-TPk"/>
+                        <viewControllerLayoutGuide type="bottom" id="GJp-JA-hHi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z0N-oF-N1f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8jw-j2-eha">
+                                <rect key="frame" x="20" y="74" width="335" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FT0-27-9C0" userLabel="Text">
+                                        <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                        <state key="normal" image="text"/>
+                                        <connections>
+                                            <action selector="textAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="xjg-K2-vSQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jF-QQ-Qqz" userLabel="Photo">
+                                        <rect key="frame" x="89" y="0.0" width="68.5" height="30"/>
+                                        <state key="normal" image="photo"/>
+                                        <connections>
+                                            <action selector="photoAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="NxV-Nz-uP9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGh-HG-jSQ" userLabel="Remind">
+                                        <rect key="frame" x="177.5" y="0.0" width="69" height="30"/>
+                                        <state key="normal" image="remind"/>
+                                        <connections>
+                                            <action selector="remindAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="dGV-pw-eK2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY0-k8-fuz" userLabel="Audio">
+                                        <rect key="frame" x="266.5" y="0.0" width="68.5" height="30"/>
+                                        <state key="normal" image="audio"/>
+                                        <connections>
+                                            <action selector="audioAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="X0t-cx-OvD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JUp-NJ-bjY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8jw-j2-eha" firstAttribute="leading" secondItem="Z0N-oF-N1f" secondAttribute="leading" constant="20" id="4un-Bj-3Nl"/>
+                            <constraint firstItem="8jw-j2-eha" firstAttribute="top" secondItem="ADa-RN-TPk" secondAttribute="bottom" constant="10" id="Mbb-Vb-88r"/>
+                            <constraint firstAttribute="trailing" secondItem="8jw-j2-eha" secondAttribute="trailing" constant="20" id="Mrr-Lz-2jE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hxz-Pg-jlH">
+                        <barButtonItem key="leftBarButtonItem" image="text" id="I4Z-yH-LNu"/>
+                        <barButtonItem key="rightBarButtonItem" image="search" id="LGS-Le-oqr"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCb-w1-Wta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57" y="12"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="audio" width="20" height="20"/>
+        <image name="photo" width="20" height="20"/>
+        <image name="remind" width="20" height="20"/>
+        <image name="search" width="20" height="20"/>
+        <image name="text" width="20" height="20"/>
+    </resources>
+</document>
