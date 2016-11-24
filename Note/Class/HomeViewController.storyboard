@@ -51,7 +51,7 @@
                                         <rect key="frame" x="89" y="0.0" width="68.5" height="30"/>
                                         <state key="normal" image="photo"/>
                                         <connections>
-                                            <action selector="photoAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="NxV-Nz-uP9"/>
+                                            <segue destination="bzt-Ox-vjO" kind="modal" id="oSP-0K-nPy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGh-HG-jSQ" userLabel="Remind">
@@ -88,11 +88,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCb-w1-Wta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="12"/>
+            <point key="canvasLocation" x="-145" y="2"/>
+        </scene>
+        <!--Custom Camera Controller-->
+        <scene sceneID="OBt-YD-Nym">
+            <objects>
+                <viewController id="bzt-Ox-vjO" customClass="CustomCameraController" customModule="Note" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xfq-YI-AIb"/>
+                        <viewControllerLayoutGuide type="bottom" id="MvO-CI-TkY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i3T-ug-CIL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqe-ko-32A">
+                                <rect key="frame" x="152" y="577" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="bxd-Pg-2CO"/>
+                                    <constraint firstAttribute="width" constant="70" id="jwS-gC-FWc"/>
+                                </constraints>
+                                <state key="normal" image="cameraButton"/>
+                                <connections>
+                                    <action selector="capture:" destination="bzt-Ox-vjO" eventType="touchUpInside" id="VG7-65-jYe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5k-eE-FJL">
+                                <rect key="frame" x="30" y="597" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="I8O-u1-41r"/>
+                                    <constraint firstAttribute="height" constant="30" id="tqi-kc-c7u"/>
+                                </constraints>
+                                <state key="normal" image="change"/>
+                                <connections>
+                                    <action selector="changeInput:" destination="bzt-Ox-vjO" eventType="touchUpInside" id="Ofu-7y-GnQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l5k-eE-FJL" firstAttribute="centerY" secondItem="Qqe-ko-32A" secondAttribute="centerY" id="FvG-kh-qFz"/>
+                            <constraint firstItem="Qqe-ko-32A" firstAttribute="centerX" secondItem="i3T-ug-CIL" secondAttribute="centerX" id="RaS-B3-Krc"/>
+                            <constraint firstItem="l5k-eE-FJL" firstAttribute="leading" secondItem="i3T-ug-CIL" secondAttribute="leading" constant="30" id="aYp-mM-csj"/>
+                            <constraint firstItem="MvO-CI-TkY" firstAttribute="top" secondItem="Qqe-ko-32A" secondAttribute="bottom" constant="20" id="bde-Dy-1cs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeBtn" destination="l5k-eE-FJL" id="vmp-EG-Xaz"/>
+                        <outlet property="photoBtn" destination="Qqe-ko-32A" id="ih4-VE-vnQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WC2-2k-phw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="1"/>
         </scene>
     </scenes>
     <resources>
         <image name="audio" width="20" height="20"/>
+        <image name="cameraButton" width="122" height="122"/>
+        <image name="change" width="40" height="40"/>
         <image name="photo" width="20" height="20"/>
         <image name="remind" width="20" height="20"/>
         <image name="search" width="20" height="20"/>

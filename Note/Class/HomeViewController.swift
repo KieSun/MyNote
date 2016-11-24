@@ -9,6 +9,8 @@
 import UIKit
 import SnapKit
 
+
+
 class HomeViewController: UIViewController {
 
     fileprivate lazy var remindView: RemindView = {
@@ -36,9 +38,6 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func textAction(_ sender: UIButton) {
-    }
-    
-    @IBAction func photoAction(_ sender: UIButton) {
     }
     
     @IBAction func remindAction(_ sender: UIButton) {
