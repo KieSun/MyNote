@@ -15,6 +15,8 @@ class CustomCameraController: UIViewController {
     
     @IBOutlet weak var changeBtn: UIButton!
     @IBOutlet weak var photoBtn: UIButton!
+    @IBOutlet weak var dismissBtn: UIButton!
+    @IBOutlet weak var photoLibrary: UIButton!
     
     var backDevice: AVCaptureDevice?
     var frontDevice: AVCaptureDevice?
@@ -22,6 +24,8 @@ class CustomCameraController: UIViewController {
     
     var photoOutput: AVCapturePhotoOutput?
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    
+    var image: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +49,6 @@ class CustomCameraController: UIViewController {
             
             photoOutput = AVCapturePhotoOutput()
             
-            
-
             captureSession.addInput(input)
             captureSession.addOutput(photoOutput)
             
@@ -55,7 +57,7 @@ class CustomCameraController: UIViewController {
             cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             cameraPreviewLayer?.frame = view.layer.frame
             
-            toFront(view: photoBtn, changeBtn)
+            toFront(view: photoBtn, changeBtn, dismissBtn, photoLibrary)
             captureSession.startRunning()
             
         } catch  {
@@ -69,16 +71,26 @@ class CustomCameraController: UIViewController {
         view.forEach { [weak self] in
             
             self?.view.bringSubview(toFront: $0)
+            
+            
         }
     }
+    
+    @IBAction func openPhotoLibrary(_ sender: UIButton) {
+        
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+    }
+    
     
     @IBAction func capture(_ sender: UIButton) {
         
         let settings = AVCapturePhotoSettings()
         let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
         let previewFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
-                             kCVPixelBufferWidthKey as String: 160,
-                             kCVPixelBufferHeightKey as String: 160,
+                             kCVPixelBufferWidthKey as String: 300,
+                             kCVPixelBufferHeightKey as String: 300,
                              ]
         settings.previewPhotoFormat = previewFormat
         photoOutput?.capturePhoto(with: settings, delegate: self)
@@ -107,6 +119,17 @@ class CustomCameraController: UIViewController {
         
     }
     
+    @IBAction func dismiss(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "saveImage" {
+            
+            let vc = segue.destination as! SaveImageController
+            vc.image = image
+        }
+    }
 }
 
 extension CustomCameraController: AVCapturePhotoCaptureDelegate {
@@ -124,8 +147,26 @@ extension CustomCameraController: AVCapturePhotoCaptureDelegate {
                 return
             }
             
-            let image = UIImage(data: data)
-            print(image ?? 0)
+            image = UIImage(data: data)
+            self.performSegue(withIdentifier: "saveImage", sender: self)
         }
     }
+}
+
+extension CustomCameraController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            print(image)
+        }else {
+            print("error")
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CustomCameraController: UINavigationControllerDelegate {
+    
 }

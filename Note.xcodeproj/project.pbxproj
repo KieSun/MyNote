@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31400E0509F4267CE0D7E3FD /* Pods_Note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F848830DF51FAADE4613C4AD /* Pods_Note.framework */; };
+		702DF3E51DE838410047D460 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702DF3E41DE838410047D460 /* DataBase.swift */; };
+		702DF3E81DE83C550047D460 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702DF3E71DE83C550047D460 /* DateExtension.swift */; };
 		709F81D01DE572910029366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81CF1DE572910029366D /* AppDelegate.swift */; };
 		709F81D51DE572910029366D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 709F81D31DE572910029366D /* Main.storyboard */; };
 		709F81D71DE572910029366D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709F81D61DE572910029366D /* Assets.xcassets */; };
@@ -17,6 +19,7 @@
 		709F81F51DE573DA0029366D /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 709F81F41DE573DA0029366D /* HomeViewController.storyboard */; };
 		709F81F81DE577EC0029366D /* RemindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81F71DE577EC0029366D /* RemindView.swift */; };
 		709F81FA1DE577F40029366D /* RemindView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709F81F91DE577F40029366D /* RemindView.xib */; };
+		70CF799C1DE807980058A02F /* SaveImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CF799B1DE807980058A02F /* SaveImageController.swift */; };
 		70FD73CA1DE6CC8A008D90E4 /* CustomCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD73C91DE6CC8A008D90E4 /* CustomCameraController.swift */; };
 		C1AE238817E0686F8BCA1D32 /* Pods_NoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF488F941C5A6589391AB46 /* Pods_NoteTests.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +37,8 @@
 /* Begin PBXFileReference section */
 		1674132942DA0F2C922D483F /* Pods-NoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteTests/Pods-NoteTests.release.xcconfig"; sourceTree = "<group>"; };
 		36A45D18AC8781AF7151CAC1 /* Pods-NoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteTests/Pods-NoteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		702DF3E41DE838410047D460 /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		702DF3E71DE83C550047D460 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		709F81CC1DE572910029366D /* Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Note.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709F81CF1DE572910029366D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		709F81D41DE572910029366D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		709F81F41DE573DA0029366D /* HomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		709F81F71DE577EC0029366D /* RemindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindView.swift; sourceTree = "<group>"; };
 		709F81F91DE577F40029366D /* RemindView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindView.xib; sourceTree = "<group>"; };
+		70CF799B1DE807980058A02F /* SaveImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveImageController.swift; sourceTree = "<group>"; };
 		70FD73C91DE6CC8A008D90E4 /* CustomCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCameraController.swift; sourceTree = "<group>"; };
 		A3A53C32FB70FF570BAE469A /* Pods-Note.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Note.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Note/Pods-Note.debug.xcconfig"; sourceTree = "<group>"; };
 		CAF488F941C5A6589391AB46 /* Pods_NoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +80,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702DF3E31DE8382D0047D460 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				702DF3E41DE838410047D460 /* DataBase.swift */,
+			);
+			name = Model;
+			path = View/Model;
+			sourceTree = "<group>";
+		};
+		702DF3E61DE83C360047D460 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				702DF3E71DE83C550047D460 /* DateExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		709F81C31DE572910029366D = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				709F81EF1DE572C80029366D /* Class */,
+				702DF3E31DE8382D0047D460 /* Model */,
 				709F81F61DE577DB0029366D /* View */,
+				702DF3E61DE83C360047D460 /* Extension */,
 				709F81CF1DE572910029366D /* AppDelegate.swift */,
 				709F81D31DE572910029366D /* Main.storyboard */,
 				709F81D61DE572910029366D /* Assets.xcassets */,
@@ -123,6 +148,7 @@
 				709F81F01DE573B90029366D /* HomeViewController.swift */,
 				709F81F41DE573DA0029366D /* HomeViewController.storyboard */,
 				70FD73C91DE6CC8A008D90E4 /* CustomCameraController.swift */,
+				70CF799B1DE807980058A02F /* SaveImageController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -363,9 +389,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				709F81D01DE572910029366D /* AppDelegate.swift in Sources */,
+				702DF3E81DE83C550047D460 /* DateExtension.swift in Sources */,
+				702DF3E51DE838410047D460 /* DataBase.swift in Sources */,
 				709F81F81DE577EC0029366D /* RemindView.swift in Sources */,
 				709F81F11DE573B90029366D /* HomeViewController.swift in Sources */,
 				70FD73CA1DE6CC8A008D90E4 /* CustomCameraController.swift in Sources */,
+				70CF799C1DE807980058A02F /* SaveImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

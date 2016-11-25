@@ -48,21 +48,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jF-QQ-Qqz" userLabel="Photo">
-                                        <rect key="frame" x="89" y="0.0" width="68.5" height="30"/>
+                                        <rect key="frame" x="89" y="0.0" width="69" height="30"/>
                                         <state key="normal" image="photo"/>
                                         <connections>
                                             <segue destination="bzt-Ox-vjO" kind="modal" id="oSP-0K-nPy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGh-HG-jSQ" userLabel="Remind">
-                                        <rect key="frame" x="177.5" y="0.0" width="69" height="30"/>
+                                        <rect key="frame" x="178" y="0.0" width="68" height="30"/>
                                         <state key="normal" image="remind"/>
                                         <connections>
                                             <action selector="remindAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="dGV-pw-eK2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY0-k8-fuz" userLabel="Audio">
-                                        <rect key="frame" x="266.5" y="0.0" width="68.5" height="30"/>
+                                        <rect key="frame" x="266" y="0.0" width="69" height="30"/>
                                         <state key="normal" image="audio"/>
                                         <connections>
                                             <action selector="audioAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="X0t-cx-OvD"/>
@@ -124,31 +124,120 @@
                                     <action selector="changeInput:" destination="bzt-Ox-vjO" eventType="touchUpInside" id="Ofu-7y-GnQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afk-0c-VZy">
+                                <rect key="frame" x="25" y="40" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6a6-Ps-Sph"/>
+                                    <constraint firstAttribute="height" constant="40" id="jxK-9L-zMD"/>
+                                </constraints>
+                                <state key="normal" image="exit"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="bzt-Ox-vjO" eventType="touchUpInside" id="5cL-TP-aR8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5y-Gg-h2i">
+                                <rect key="frame" x="169.5" y="43.5" width="35" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="相册">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="openPhotoLibrary:" destination="bzt-Ox-vjO" eventType="touchUpInside" id="XT3-eq-B8K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="afk-0c-VZy" firstAttribute="top" secondItem="Xfq-YI-AIb" secondAttribute="bottom" constant="20" id="5K9-Br-ht9"/>
+                            <constraint firstItem="Q5y-Gg-h2i" firstAttribute="centerX" secondItem="i3T-ug-CIL" secondAttribute="centerX" id="5Nl-9J-rFt"/>
                             <constraint firstItem="l5k-eE-FJL" firstAttribute="centerY" secondItem="Qqe-ko-32A" secondAttribute="centerY" id="FvG-kh-qFz"/>
                             <constraint firstItem="Qqe-ko-32A" firstAttribute="centerX" secondItem="i3T-ug-CIL" secondAttribute="centerX" id="RaS-B3-Krc"/>
+                            <constraint firstItem="afk-0c-VZy" firstAttribute="leading" secondItem="i3T-ug-CIL" secondAttribute="leading" constant="25" id="XdA-NI-4lo"/>
                             <constraint firstItem="l5k-eE-FJL" firstAttribute="leading" secondItem="i3T-ug-CIL" secondAttribute="leading" constant="30" id="aYp-mM-csj"/>
                             <constraint firstItem="MvO-CI-TkY" firstAttribute="top" secondItem="Qqe-ko-32A" secondAttribute="bottom" constant="20" id="bde-Dy-1cs"/>
+                            <constraint firstItem="Q5y-Gg-h2i" firstAttribute="centerY" secondItem="afk-0c-VZy" secondAttribute="centerY" id="uqm-35-sHS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="changeBtn" destination="l5k-eE-FJL" id="vmp-EG-Xaz"/>
+                        <outlet property="dismissBtn" destination="afk-0c-VZy" id="2XR-38-gcS"/>
                         <outlet property="photoBtn" destination="Qqe-ko-32A" id="ih4-VE-vnQ"/>
+                        <outlet property="photoLibrary" destination="Q5y-Gg-h2i" id="0Lg-wz-KWB"/>
+                        <segue destination="rwX-MH-GRI" kind="presentation" identifier="saveImage" id="kPu-Qg-t2y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WC2-2k-phw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="1"/>
+            <point key="canvasLocation" x="719" y="0.0"/>
+        </scene>
+        <!--Save Image Controller-->
+        <scene sceneID="cBA-H6-SwZ">
+            <objects>
+                <viewController id="rwX-MH-GRI" customClass="SaveImageController" customModule="Note" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D1U-5D-q1d"/>
+                        <viewControllerLayoutGuide type="bottom" id="zQk-u1-mET"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1bI-zV-rwG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ea5-2S-mNf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roX-JR-YIS">
+                                <rect key="frame" x="167" y="607" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="UqT-Lp-tFD"/>
+                                    <constraint firstAttribute="width" constant="40" id="yeJ-Q0-kiO"/>
+                                </constraints>
+                                <state key="normal" image="save"/>
+                                <connections>
+                                    <action selector="saveImage:" destination="rwX-MH-GRI" eventType="touchUpInside" id="1U4-MM-Q3j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQJ-PQ-of9">
+                                <rect key="frame" x="25" y="40" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="5dT-z1-22c"/>
+                                    <constraint firstAttribute="height" constant="40" id="dc7-ne-S6v"/>
+                                </constraints>
+                                <state key="normal" image="exit"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="rwX-MH-GRI" eventType="touchUpInside" id="k12-oH-Kwy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zQk-u1-mET" firstAttribute="top" secondItem="Ea5-2S-mNf" secondAttribute="bottom" id="2Un-mD-mRR"/>
+                            <constraint firstItem="yQJ-PQ-of9" firstAttribute="leading" secondItem="1bI-zV-rwG" secondAttribute="leading" constant="25" id="8p9-4L-jkt"/>
+                            <constraint firstItem="yQJ-PQ-of9" firstAttribute="top" secondItem="D1U-5D-q1d" secondAttribute="bottom" constant="20" id="I0J-C5-D0G"/>
+                            <constraint firstItem="Ea5-2S-mNf" firstAttribute="top" secondItem="1bI-zV-rwG" secondAttribute="top" id="OYx-Ja-8qC"/>
+                            <constraint firstItem="Ea5-2S-mNf" firstAttribute="leading" secondItem="1bI-zV-rwG" secondAttribute="leading" id="PQX-pB-ruf"/>
+                            <constraint firstAttribute="trailing" secondItem="Ea5-2S-mNf" secondAttribute="trailing" id="YfU-S7-Zlf"/>
+                            <constraint firstItem="zQk-u1-mET" firstAttribute="top" secondItem="roX-JR-YIS" secondAttribute="bottom" constant="20" id="fal-qu-3DL"/>
+                            <constraint firstItem="roX-JR-YIS" firstAttribute="centerX" secondItem="Ea5-2S-mNf" secondAttribute="centerX" id="mAF-FU-gW9"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="uiimageView" destination="Ea5-2S-mNf" id="yAb-Pe-0hG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fA-AJ-leH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="0.0"/>
         </scene>
     </scenes>
     <resources>
         <image name="audio" width="20" height="20"/>
         <image name="cameraButton" width="122" height="122"/>
         <image name="change" width="40" height="40"/>
+        <image name="exit" width="40" height="40"/>
         <image name="photo" width="20" height="20"/>
         <image name="remind" width="20" height="20"/>
+        <image name="save" width="40" height="40"/>
         <image name="search" width="20" height="20"/>
         <image name="text" width="20" height="20"/>
     </resources>

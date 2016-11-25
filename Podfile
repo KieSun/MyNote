@@ -6,7 +6,7 @@ target 'Note' do
   use_frameworks!
  
   pod 'SnapKit', '~> 3.0.2'
-
+  pod 'RealmSwift'
   target 'NoteTests' do
     inherit! :search_paths
     # Pods for testing
