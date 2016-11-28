@@ -8,10 +8,14 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
+typealias AllTableViewProtocol = UITableViewDelegate & UITableViewDataSource
 
 
 class HomeViewController: UIViewController {
+    
+    var token: NotificationToken?
 
     fileprivate lazy var remindView: RemindView = {
         
@@ -22,10 +26,33 @@ class HomeViewController: UIViewController {
         return remindView
     }()
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    var dataArray: Array<DataBase>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let realm = try! Realm()
+        token = realm.addNotificationBlock { notification, realm in
+            self.updateUI()
+        }
         
+        
+    }
+    
+    deinit {
+        token?.stop()
+    }
+    
+    fileprivate func updateUI() {
+        
+        let realm = try! Realm()
+        
+        dataArray = Array(realm.objects(DataBase.self))
+        DispatchQueue.main.async {[weak self] in
+            self?.tableView.reloadData()
+        }
     }
 
     fileprivate func removeRemindView() {
@@ -58,6 +85,22 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func audioAction(_ sender: UIButton) {
+        
+    }
+    
+}
+
+extension HomeViewController: AllTableViewProtocol {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeCell
+        
+        cell.model = dataArray?[indexPath.row]
+        return cell
     }
 }
 

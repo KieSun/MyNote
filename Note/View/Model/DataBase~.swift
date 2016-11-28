@@ -29,10 +29,9 @@ class DataBase: Object {
         
         let imageData = UIImageJPEGRepresentation(image, 1)
         model.title = "照片于 \(currentTime) 拍摄"
-        model.time = currentTime
         model.imagedata = imageData
         model.id = currentTime
-        
+        model.time = currentTime
         
         do {
             let relam = try Realm()

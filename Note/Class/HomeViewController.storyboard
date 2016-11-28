@@ -48,21 +48,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jF-QQ-Qqz" userLabel="Photo">
-                                        <rect key="frame" x="89" y="0.0" width="69" height="30"/>
+                                        <rect key="frame" x="89" y="0.0" width="68.5" height="30"/>
                                         <state key="normal" image="photo"/>
                                         <connections>
                                             <segue destination="bzt-Ox-vjO" kind="modal" id="oSP-0K-nPy"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGh-HG-jSQ" userLabel="Remind">
-                                        <rect key="frame" x="178" y="0.0" width="68" height="30"/>
+                                        <rect key="frame" x="177.5" y="0.0" width="69" height="30"/>
                                         <state key="normal" image="remind"/>
                                         <connections>
                                             <action selector="remindAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="dGV-pw-eK2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY0-k8-fuz" userLabel="Audio">
-                                        <rect key="frame" x="266" y="0.0" width="69" height="30"/>
+                                        <rect key="frame" x="266.5" y="0.0" width="68.5" height="30"/>
                                         <state key="normal" image="audio"/>
                                         <connections>
                                             <action selector="audioAction:" destination="Ofj-rS-IO8" eventType="touchUpInside" id="X0t-cx-OvD"/>
@@ -73,18 +73,43 @@
                                     <constraint firstAttribute="height" constant="30" id="JUp-NJ-bjY"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-qj-yHV">
+                                <rect key="frame" x="20" y="124" width="335" height="523"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" id="nRQ-fu-0SS" customClass="HomeCell" customModule="Note" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nRQ-fu-0SS" id="ceN-fz-PTb">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ofj-rS-IO8" id="WzQ-XC-XP7"/>
+                                    <outlet property="delegate" destination="Ofj-rS-IO8" id="o8W-de-ofH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="SBh-qj-yHV" firstAttribute="top" secondItem="8jw-j2-eha" secondAttribute="bottom" constant="20" id="0nP-sF-AVs"/>
                             <constraint firstItem="8jw-j2-eha" firstAttribute="leading" secondItem="Z0N-oF-N1f" secondAttribute="leading" constant="20" id="4un-Bj-3Nl"/>
                             <constraint firstItem="8jw-j2-eha" firstAttribute="top" secondItem="ADa-RN-TPk" secondAttribute="bottom" constant="10" id="Mbb-Vb-88r"/>
                             <constraint firstAttribute="trailing" secondItem="8jw-j2-eha" secondAttribute="trailing" constant="20" id="Mrr-Lz-2jE"/>
+                            <constraint firstItem="GJp-JA-hHi" firstAttribute="top" secondItem="SBh-qj-yHV" secondAttribute="bottom" constant="20" id="wFl-Ys-JXU"/>
+                            <constraint firstItem="SBh-qj-yHV" firstAttribute="leading" secondItem="Z0N-oF-N1f" secondAttribute="leading" constant="20" id="y3j-yM-hMF"/>
+                            <constraint firstAttribute="trailing" secondItem="SBh-qj-yHV" secondAttribute="trailing" constant="20" id="yHH-Xe-4yn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hxz-Pg-jlH">
                         <barButtonItem key="leftBarButtonItem" image="text" id="I4Z-yH-LNu"/>
                         <barButtonItem key="rightBarButtonItem" image="search" id="LGS-Le-oqr"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="SBh-qj-yHV" id="pVS-Gg-Hhg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCb-w1-Wta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

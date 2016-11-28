@@ -23,6 +23,6 @@ extension Date {
         let minute = components.minute
         let second = components.second
         
-        return "\(year!)年\(month!)月\(day!)日\(hour!)时\(minute!)分\(second!)秒"
+        return "\(year!)/\(month!)/\(day!)/\(hour!)/\(minute!)/\(second!)/"
     }
 }

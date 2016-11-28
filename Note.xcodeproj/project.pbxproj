@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31400E0509F4267CE0D7E3FD /* Pods_Note.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F848830DF51FAADE4613C4AD /* Pods_Note.framework */; };
+		702D1DB71DEC0F7C00D235D6 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702D1DB51DEC0F7C00D235D6 /* HomeCell.swift */; };
+		702D1DB81DEC0F7C00D235D6 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 702D1DB61DEC0F7C00D235D6 /* HomeCell.xib */; };
 		702DF3E51DE838410047D460 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702DF3E41DE838410047D460 /* DataBase.swift */; };
 		702DF3E81DE83C550047D460 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702DF3E71DE83C550047D460 /* DateExtension.swift */; };
 		709F81D01DE572910029366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81CF1DE572910029366D /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		1674132942DA0F2C922D483F /* Pods-NoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoteTests/Pods-NoteTests.release.xcconfig"; sourceTree = "<group>"; };
 		36A45D18AC8781AF7151CAC1 /* Pods-NoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NoteTests/Pods-NoteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		702D1DB51DEC0F7C00D235D6 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		702D1DB61DEC0F7C00D235D6 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		702DF3E41DE838410047D460 /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		702DF3E71DE83C550047D460 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		709F81CC1DE572910029366D /* Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Note.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,8 @@
 			children = (
 				709F81F71DE577EC0029366D /* RemindView.swift */,
 				709F81F91DE577F40029366D /* RemindView.xib */,
+				702D1DB51DEC0F7C00D235D6 /* HomeCell.swift */,
+				702D1DB61DEC0F7C00D235D6 /* HomeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				709F81F51DE573DA0029366D /* HomeViewController.storyboard in Resources */,
 				709F81DA1DE572910029366D /* LaunchScreen.storyboard in Resources */,
 				709F81D71DE572910029366D /* Assets.xcassets in Resources */,
+				702D1DB81DEC0F7C00D235D6 /* HomeCell.xib in Resources */,
 				709F81D51DE572910029366D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +397,7 @@
 			files = (
 				709F81D01DE572910029366D /* AppDelegate.swift in Sources */,
 				702DF3E81DE83C550047D460 /* DateExtension.swift in Sources */,
+				702D1DB71DEC0F7C00D235D6 /* HomeCell.swift in Sources */,
 				702DF3E51DE838410047D460 /* DataBase.swift in Sources */,
 				709F81F81DE577EC0029366D /* RemindView.swift in Sources */,
 				709F81F11DE573B90029366D /* HomeViewController.swift in Sources */,
